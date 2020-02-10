@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Employee Manager System</title>
+
+<link rel="stylesheet"
+	href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet"
+	href="https://formden.com/static/cdn/bootstrap-iso.css" />
+<!-- Load local and non-local CSS and JavaScript. -->
+<link rel="stylesheet" href="css/index.css">
+<link
+	href="https://www.cssscript.com/wp-includes/css/sticky.css?20190923"
+	rel="stylesheet" type="text/css">
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<link rel="stylesheet"
+	href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
+<link rel="stylesheet"
+	href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
+<link rel="stylesheet" type="text/css"
+	href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Oswald">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Open Sans">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- *** Load the jQuery and jQueryUI libraries here. *** -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+<script type="text/javascript"
+	src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript"
+	src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
+<!-- *** Load more JS here *** -->
+<script src="script/index.js"></script>
+
+</head>
+
+<body>
+
+	<div id="theHeader">
+		<section id="theSection">
+			<img id="logo" src="images/logo.png" alt="HyperDAP logo">
+			<button id="refreshButton" style=" margin:50px 0 0 25%; border: none; background-color: white;"><i class="fa fa-refresh" style="font-size: 48px; color: blue;"></i></button>
+			<button id="openDialog" style="border: none; background-color: white;">
+				<i class="fa fa-plus" style="font-size: 48px; color: blue;"></i>
+			</button>
+			<br> <br>
+		</section>
+		<div id="subHeader"
+		style="height: 5px; width: 100%; background-color: #0001FF; margin: 1% 0 0 0;"></div>
+	</div>
+	
+
+	<!-- Section for entering details of a new employee. -->
+	<!-- employee Name: <input type="text" id="employeeName">  -->
+
+	<section id="employeeDetailsDialog" hidden="hidden">
+		Forename: <input id="forename" name="forename" type="text"
+			placeholder="Enter your name" pattern="[a-zA-Z]*"required> Surname: <input
+			id="surname" name="surname" placeholder="Enter surname" type="text"
+			required> <br> DOB: <input type="text" id="dateOfBirth"
+			name="singlerange" placeholder="Enter date" required> Job
+		Title: <input type="text" id="jobTitle" name="jobTitle"
+			placeholder="Enter job title" pattern="[a-zA-Z]*" required> Qualification: <input
+			id="qualificationTitle" name="qualificationTitle" pattern="[a-zA-Z]*" type="text"
+			placeholder="title" min="1" max="3" required> Date Completed:
+		<input type="text" id="dateCompleted" name="singlerange"
+			placeholder="Enter date Completed" required> Expiry Date: <input
+			type="text" id="expiryDate" name="singlerange"
+			placeholder="Enter Expiry Date" required>
+
+		<button id="saveEmployee" type="submit" class="btn"
+			onclick="saveEmployee()">Save</button>
+		<button id="cancelEmployee" type="submit" class="btn"
+			onclick="cancelEmployee()">Cancel</button>
+
+	</section>
+
+	<section id="updateDeleteDialog" hidden="hidden">
+		Forename: <input id="newForename" name="updateForename" type="text"
+			placeholder="Enter your forename" required> Surname: <input
+			id="newSurname" name="newSurname" placeholder="Enter surname"
+			type="text" required> DOD: <input type="text"
+			id="newDateOfBirth" name="singlerange"
+			placeholder="Enter date of birtsh" required> Job Title: <input
+			type="text" id="newJobTitle" name="newJobTitle"
+			placeholder="Enter job title" required> <br>
+		Qualification: <input id="newQualificationTitle"
+			name="newQualificationTitle" type="text" placeholder="title" min="1"
+			max="3" required> Date Completed: <input type="text"
+			id="newDateCompleted" name="singlerange"
+			placeholder="Enter date Completed" required> Expiry Date: <input
+			type="text" id="newExpiryDate" name="singlerange"
+			placeholder="Enter Expiry Date" required>
+
+		<button id="updateEmployee" type="submit" class="btn"
+			onclick="onClickUpdate()">Update</button>
+		<button id="deleteEmployee" type="submit" class="btn"
+			onclick="onClickDelete()">Delete</button>
+		<button id="cancelEmployee" type="submit" class="btn"
+			onclick="cancelEmployeeFunc()">Cancel</button>
+
+	</section>
+
+	<div id="theBody">
+		<main>
+			<ol id="employees" class="gradient-list" style="margin-left:25%;">
+			</ol>
+		</main>
+	</div>
+
+	<footer id="hasNoName"> </footer>
+</body>
+</html>

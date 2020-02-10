@@ -1,0 +1,180 @@
+/*** FONTS ***/
+@import url(https://fonts.googleapis.com/css?family=Montserrat:900|Raleway:400,400i,700,700i);
+
+body {
+	font-family: Helvetica;
+	font-size: 16pt;
+}
+
+#appointmentDetails {
+	text-align: center;
+}
+
+#appointmentDetails section {
+	padding: 5px;
+}
+
+#searchName {
+	margin: 70px 0 0 15%;
+}
+
+#refreshButton {
+	margin: 70px 0 0 0;
+	border: none;
+	border-radius-right: 15px;
+	text-align: center;
+	width: 5%;
+}
+
+#refreshButton{
+	margin: 70px 0 0 0;
+	border: none;
+}
+
+#map {
+	width: 100%;
+	height: 300px;
+}
+
+#employeeManager {
+	margin-left: 20%;
+	color: blue;
+	font-weight: bold;
+}
+
+li{
+	margin: 0 0 0 0;
+}
+
+#openDialog {
+	border: none;
+	border-radius: 50%;
+	float: right;
+	position: static;
+	margin: 40px 40px 0 0;
+	background-color: white;
+}
+
+#theHeader {
+	width: 100%;
+	height: 20%;
+}
+
+#theSection {
+	margin-left: 30%;
+}
+
+#back {
+	margin-top: 10%;
+	width: 100%;
+	height: 80%;
+	background-color: black;
+	width: 100%;
+}
+
+#logo {
+	margin: 2% 0 5% -40%;
+	float: left;
+	height: 10%;
+	width: 15%;
+}
+
+#hasNoName {
+	width: 100% !important;
+	height: 10% !important;
+	background-color: purple !important;
+}
+
+#appointments {
+	margin-left: 25%;
+}
+
+#theBody {
+	margin-top: -1%;
+	width: 100%;
+	height: 60%;
+}
+
+.selected {
+	color: #ff0000;
+	font-weight: bold;
+}
+
+img {
+	vertical-align: middle;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+	background-color: #555;
+	color: white;
+	padding: 16px 20px;
+	border: none;
+	cursor: pointer;
+	opacity: 0.8;
+	position: fixed;
+	bottom: 23px;
+	right: 28px;
+	width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+	display: none;
+	position: fixed;
+	bottom: 0;
+	right: 15px;
+	border: 3px solid #f1f1f1;
+	z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+	max-width: 300px;
+	padding: 10px;
+	background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+	width: 100%;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	border: none;
+	background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus
+	{
+	background-color: #ddd;
+	outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+	background-color: #4CAF50;
+	color: white;
+	padding: 16px 20px;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	margin-bottom: 10px;
+	opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+	background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+	opacity: 1;
+}
+
+
